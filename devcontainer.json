@@ -1,0 +1,43 @@
+// .devcontainer/devcontainer.json
+{
+  "name": "QIS101 Conda",
+  // Use the image you built:
+  // "image": "my-debian-conda-qis101",
+  // If you still want VS Code to build it instead, replace "image" with:
+  "build": { "dockerfile": "../Dockerfile", "context": ".." },
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vscode.powershell",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-renderers",
+        "ms-python.isort",
+        "visualstudioexptteam.vscodeintellicode",
+        "visualstudioexptteam.intellicode-api-usage-examples",
+        "streetsidesoftware.code-spell-checker",
+        "ms-vscode.cmake-tools",
+        "davidanson.vscode-markdownlint",
+        "esbenp.prettier-vscode",
+        "mechatroner.rainbow-csv",
+        "emmanuelbeziat.vscode-great-icons",
+        "james-yu.latex-workshop",
+        "cschlosser.doxdocgen",
+        "redhat.vscode-yaml",
+        "charliermarsh.ruff"
+      ]
+    }
+  },
+  // "workspaceFolder": "/workspace",
+  "remoteUser": "root",
+  // After the container starts, make sure the conda env is active:
+  "postStartCommand": "echo hi"
+  // "postStartCommand": "conda activate qis101"
+}
